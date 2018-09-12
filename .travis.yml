@@ -11,6 +11,7 @@ script:
 branches:
   only:
     - master
+    - develop
     
 deploy:
   provider: script
