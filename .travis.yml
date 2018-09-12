@@ -3,13 +3,17 @@ language: objective-c
 before_install:
 - chmod a+x ./Scripts/install.sh
 - chmod a+x ./Scripts/build.sh
-- chmod a+x ./Scripts/deploy.sh
 install:
 - ./Scripts/install.sh
 script:
 - ./Scripts/build.sh
-- ./Scripts/deploy.sh
 
 branches:
   only:
     - master
+    
+deploy:
+  provider: script
+  script: bash scripts/deploy.sh
+  on:
+    branch: develop
