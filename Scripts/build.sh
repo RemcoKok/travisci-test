@@ -1,6 +1,6 @@
 #! /bin/sh
 
-project="<YOUR PROJECT NAME HERE>"
+project="travisci-test"
 
 echo "Attempting to build $project for Windows"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity 
