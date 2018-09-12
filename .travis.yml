@@ -15,4 +15,4 @@ branches:
     
 deploy:
   on:
-    branch: develop
+    branch: master
