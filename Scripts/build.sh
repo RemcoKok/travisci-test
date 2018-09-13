@@ -1,7 +1,7 @@
 #! /bin/sh
 
 # Change this the name of your project. This will be the name of the final executables as well.
-project="project_name_goes_here"
+project="travis-test"
 
 echo "Attempting to build $project for Windows"
 /Applications/Unity/Unity.app/Contents/MacOS/Unity \
