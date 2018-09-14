@@ -23,8 +23,13 @@ install:
 script:
 - ./Scripts/build.sh
 
+after_success:
+- ./Scripts/export-unity-package.sh
 
-deploy:
+before_deploy:
+- DEPLOY_UNITYPACKAGE="$(ls -a release/*.zip | head -n 1)"
+
+ deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
   file_glob: true
