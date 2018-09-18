@@ -29,5 +29,5 @@ deploy:
   file: pipeline-v1.0-b31.unitypackage
   skip_cleanup: true
   overwrite: true
-  on: releases
+  on: 
     tags: true 
