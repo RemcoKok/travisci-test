@@ -1,7 +1,7 @@
 language: objective-c
 osx_image: xcode9.2
 rvm:
-- 2.2         #see before_install for getting RVM stable.
+- 2.2         
 
 env:
 - TRAVIS_TAG="1.0" PROJECT_NAME="pipeline" UNITY_PROJECT_PATH="pipeline" UNITY_DOWNLOAD_CACHE="$(pwd)/unity_download_cache" DEPLOY_UNITYPACKAGE="path set in deploy script"
