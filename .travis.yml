@@ -1,17 +1,16 @@
 language: objective-c
-osx_image: xcode9.2
+osx_image: xcode61
 rvm:
-- 2.2         #see before_install for getting RVM stable.
-
-env:
-- TRAVIS_TAG="1.0" PROJECT_NAME="pipeline" UNITY_PROJECT_PATH="C:\Users\remko\OneDrive\Documenten\HBO\CI\pipeline\pipeline" UNITY_DOWNLOAD_CACHE="$(pwd)/unity_download_cache" DEPLOY_UNITYPACKAGE="path set in deploy script"
-
+- 2.1.2
+install:
+- ./Scripts/install.sh
+script:
+- ./Scripts/build.sh
 
 cache:
   directories:
     - $UNITY_DOWNLOAD_CACHE
 
-    
 before_install:
 - rvm get stable
 - chmod a+x ./Scripts/*.sh
@@ -29,12 +28,11 @@ after_success:
 before_deploy:
 - DEPLOY_UNITYPACKAGE="$(ls -a release/*.zip | head -n 1)"
 
- deploy:
+deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
-  file_glob: true
-  file: $(pwd)/Build/windows.zip
+  file: $DEPLOY_UNITYPACKAGE
   skip_cleanup: true
   overwrite: true
   on:
-    tags: true  
+    tags: true 
