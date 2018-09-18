@@ -26,8 +26,7 @@ script:
 after_success:
 - ./Scripts/export-unity-package.sh
 
-before_deploy:
-- DEPLOY_UNITYPACKAGE="$(ls -a release/*.zip | head -n 1)"
+
 
 deploy:
   provider: releases
